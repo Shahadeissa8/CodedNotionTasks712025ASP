@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Order>
+
+@{
+    ViewData["Title"] = "Customers Orders";
+}
+
+<h1>This Customer's Orders</h1>
+<table class=" table table-bordered">
+    <tr>
+    <td>@Html.DisplayNameFor(whatever => whatever.OrderId)</td>
+    <td>@Html.DisplayNameFor(whatever => whatever.OrderDate)</td>
+    <td>@Html.DisplayNameFor(whatever => whatever.Product)</td>
+    <td>@Html.DisplayNameFor(whatever => whatever.TotalAmount)</td>
+    <td>@Html.DisplayNameFor(whatever => whatever.CustomerId)</td>
+    </tr>
+   @foreach(var item in Model)
+   {
+    <tr>
+        <td>@item.OrderId</td>
+        <td>@item.OrderDate</td>
+        <td>@item.Product</td>
+        <td>@item.TotalAmount</td>
+        <td>@item.CustomerId</td>
+        <td>
+                <a asp-action="OrdersDetails"
+            asp-controller="Customers"
+            asp-route-id="@item.OrderId"
+            class=" = tbn tbn-secondary"> Order details</a>
+        </td> 
+        @* why write this? so that we have more details about each order inside the customer order list *@
+    </tr>
+   }
+</table>
+

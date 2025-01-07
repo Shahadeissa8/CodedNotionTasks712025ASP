@@ -1,0 +1,9 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "No Orders";
+}
+
+<h1 class ="alert alert-danger"> No Orders</h1>
+
+<a asp-action="GetAllCustomers"
+asp-controller="Customers" class=" btn btn-danger">No orders found</a>

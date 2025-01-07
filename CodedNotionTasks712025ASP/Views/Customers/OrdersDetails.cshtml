@@ -1,0 +1,49 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "Orders Details";
+}
+
+<h1>Orders Details</h1>
+
+
+<table class="table table-bordered">
+	<tr>
+		<td>@Html.DisplayNameFor(x => x.OrderId)</td>
+		<td>@Html.DisplayNameFor(x => x.OrderDate) </td>
+		<td>@Html.DisplayNameFor(x => x.Product)</td>
+		<td>@Html.DisplayNameFor(x => x.TotalAmount)</td>
+		<td>@Html.DisplayNameFor(x => x.CustomerId)</td>
+		<td>@Html.DisplayNameFor(x => x.CreationDate)</td>
+		<td>@Html.DisplayNameFor(x => x.IsActive)</td>
+		<td>@Html.DisplayNameFor(x => x.IsDeleted)</td>
+	</tr>
+
+	<tr>
+		<td>
+			@Model.OrderId
+		</td>
+		<td>
+			@Model.OrderDate
+		</td>
+		<td>
+			@Model.Product
+		</td>
+		<td>
+			@Model.TotalAmount
+		</td>
+		<td>
+			@Model.CustomerId
+		</td>
+		<td>
+			@Model.CreationDate
+		</td>
+		<td>
+			@Model.IsActive
+		</td>
+		<td>
+			@Model.IsDeleted
+		</td>
+	</tr>
+
+
+</table>

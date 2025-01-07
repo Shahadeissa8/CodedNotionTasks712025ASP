@@ -1,0 +1,46 @@
+﻿@model Customer
+
+
+<h1>Details Of this customer</h1>
+
+<table class="table table-bordered">
+	<tr>
+		<td>@Html.DisplayNameFor(x => x.CustomerId)</td>
+		<td>@Html.DisplayNameFor(x => x.CustomerName) </td>
+		<td>@Html.DisplayNameFor(x => x.Email)</td>
+		<td>@Html.DisplayNameFor(x => x.CustomerPhone)</td>
+		<td>@Html.DisplayNameFor(x => x.City)</td>
+		<td>@Html.DisplayNameFor(x => x.CreationDate)</td>
+		<td>@Html.DisplayNameFor(x => x.IsActive)</td>
+		<td>@Html.DisplayNameFor(x => x.IsDeleted)</td>
+	</tr>
+
+	<tr>
+		<td>
+			@Model.CustomerId
+		</td>
+		<td>
+			@Model.CustomerName
+		</td>
+		<td>
+			@Model.Email
+		</td>
+		<td>
+			@Model.CustomerPhone
+		</td>
+		<td>
+			@Model.City
+		</td>
+		<td>
+			@Model.CreationDate
+		</td>
+		<td>
+			@Model.IsActive
+		</td>
+		<td>
+			@Model.IsDeleted
+		</td>
+	</tr>
+
+
+</table>

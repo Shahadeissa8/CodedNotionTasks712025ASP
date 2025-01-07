@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Customer>
+@{
+	ViewData["Title"] = "Get All Customers";
+}
+
+<h1>@ViewBag.Status</h1>
+<a asp-action="CreateCustomer" asp-controller="Customers" class="btn btn-success"> Create new Customer </a>
+
+<table class="table table-bordered">
+	<tr>
+		<th>@Html.DisplayNameFor(wutevr => wutevr.CustomerId)</th>
+		<th>@Html.DisplayNameFor(wutevr => wutevr.CustomerName)</th>
+		<th>@Html.DisplayNameFor(wutevr => wutevr.Email)</th>
+		<th>Details</th>
+	</tr>
+	@* displayfor takes the value inside, the display name for the current column title *@
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@item.CustomerId 
+			</td>
+			<td>
+
+				<a asp-action="CustomersOrders"
+				asp-controller="Customers"
+				asp-route-id="@item.CustomerId"> @item.CustomerName</a>
+			</td>
+			<td>@item.Email </td>
+			<td>
+				@if(item.IsActive)
+				{
+					<span class="badge text-success">active</span>
+				} //span 
+				else
+				{
+					<span class="badge text-danger">non-active</span>
+				}
+			</td>
+			<td>
+				<a asp-action="Details"
+				   asp-controller="Customers"
+				   asp-route-id="@item.CustomerId"
+				   class="btn btn-success"> More Details</a>
+				<a asp-action="CustomersOrders"
+				   asp-controller="Customers"
+				   asp-route-id="@item.CustomerId"
+				   class=" btn btn-dark">Get Customer Orders</a>
+
+			</td>
+		</tr>
+	}
+</table>
+
+@* object from action saved inside Model
+now what we define on top we have to find underneeth in the same orders
+*@

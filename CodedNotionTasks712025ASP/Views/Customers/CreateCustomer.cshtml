@@ -1,0 +1,43 @@
+﻿@model Customer
+@{
+	ViewData["Title"] = "Create Customer";
+}
+
+<h1>Add a new Customer</h1>
+<form asp-action="CreateCustomer" method="post">
+	<table class=" table table-bordered">
+		<tr>
+			<th><label asp-for="CustomerId"></label></th>
+			<td><input asp-for="CustomerId" class="form-control"></td>
+		</tr>
+		<tr>
+			<th><label asp-for="CustomerName"></label></th>
+			<td><input asp-for="CustomerName" class="form-control"></td>
+		</tr>
+		<tr>
+			<th><label asp-for="Email"></label></th>
+			<td><input asp-for="Email" class="form-control"></td>
+		</tr>
+		<tr>
+			<th><label asp-for="City"></label></th>
+			<td><input asp-for="City" class="form-control"></td>
+		</tr>
+		<tr>
+			<th><label asp-for="CustomerPhone"></label></th>
+			<td><input asp-for="CustomerPhone" class="form-control"></td>
+		<tr>
+			<th><label asp-for="IsActive"></label></th>
+			<td><input asp-for="IsActive" class="form-check-input form-control"/>Active</td>
+		<tr>
+			<th><label asp-for="IsDeleted"></label></th>
+			<td><input asp-for="IsDeleted" class="form-check-input form-control" />Deleted></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align:right">
+			<input type="submit" class="btn btn-warning" value="Save"/>
+			<a asp-action="GetAllCustomers" class="btn btn-warning">Cancel</a>
+			</td>
+		</tr>
+	</table>
+
+</form>
